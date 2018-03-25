@@ -1,12 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:padding="15sp"
+    android:background="@color/colorAccent"
+    android:layout_margin="10sp"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+   android:orientation="vertical"
     android:layout_height="wrap_content">
 
     <TextView
         android:text="hello this is sample text"
         android:id="@+id/tvName"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <LinearLayout
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/profName"
+        android:textSize="15sp"
+        android:text="sample prof name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/icdName"
+            android:text="sample icd name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_weight="1"
+        android:text="accuracy: 90.5"
+        android:textSize="20sp"
+        android:id="@+id/accuracy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/specialistId"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:text="specialist id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 </LinearLayout>

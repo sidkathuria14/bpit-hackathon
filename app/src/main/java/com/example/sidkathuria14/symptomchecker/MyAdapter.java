@@ -39,6 +39,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     public void onBindViewHolder(MyViewHolder holder, int position) {
     Main_Object thisObject = arrayList.get(position);
         holder.tvName.setText(thisObject.getIssue().getName());
+        holder.profName.setText(thisObject.getIssue().getProfName());
+        holder.icdName.setText(thisObject.getIssue().getIcdName());
+        holder.specialistId.setText(thisObject.getSpecialisation().get(0).getName());
+        holder.Accuracy.setText("accuracy: " + String.valueOf(thisObject.getIssue().getAccuracy()));
     }
 
     @Override
@@ -48,11 +52,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-       TextView tvName;
+       TextView tvName,Accuracy,icdName,specialistId,profName;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             tvName = (TextView)itemView.findViewById(R.id.tvName);
+            Accuracy = (TextView)itemView.findViewById(R.id.accuracy);
+            specialistId = (TextView)itemView.findViewById(R.id.specialistId);
+            icdName = (TextView)itemView.findViewById(R.id.icdName);
+            profName  = (TextView)itemView.findViewById(R.id.profName);
         }
     }
 }
