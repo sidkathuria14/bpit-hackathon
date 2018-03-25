@@ -21,7 +21,7 @@ public interface SymptomApi {
 Call<ArrayList<Main_Object>> getSymptoms(@Query("gender")String gender,
                                         @Query("year_of_birth")String year_of_birth,
                                         @Query("language")String lang,
-                                        @Query("symptoms") String [] ids ,
+                                        @Query("symptoms") String ids ,
                                         @Query("format") String format,
                                         @Query("token")String token);
 

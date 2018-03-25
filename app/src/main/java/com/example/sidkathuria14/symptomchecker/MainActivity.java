@@ -9,6 +9,7 @@ import android.util.Log;
 import com.example.sidkathuria14.symptomchecker.models.Main_Object;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,14 +40,44 @@ for(int i=0;i<intList.size();i++){
 
         SymptomApi symptomApi = retrofit.create(SymptomApi.class);
 
-symptomApi.getSymp().enqueue(new Callback<ArrayList<Main_Object>>() {
+//symptomApi.getSymp().enqueue(new Callback<ArrayList<Main_Object>>() {
+//    @Override
+//    public void onResponse(Call<ArrayList<Main_Object>> call, Response<ArrayList<Main_Object>> response) {
+//        Log.d(TAG, "onResponse: "+ response.isSuccessful());
+//        Log.d(TAG, "onResponse: " + String.valueOf(response.body().size()));
+//        Log.d(TAG, "onResponse: " + String.valueOf(response.body().get(1).getIssue().getIcdName().toString()));
+////        Log.d(TAG, "onResponse: " + response.body().get(0).getIssue().getName());
+//        for(int i=0;i<response.body().size();i++){
+//            arrayList.add(response.body().get(i));
+//        }
+//        Log.d(TAG, "onResponse: " + String.valueOf(arrayList.size()));
+//        adapter = new MyAdapter(arrayList,MainActivity.this);
+//
+//        rv.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+//        rv.setAdapter(adapter);
+////        adapter.notifyDataSetChanged();
+//
+//
+//    }
+//
+//    @Override
+//    public void onFailure(Call<ArrayList<Main_Object>> call, Throwable t) {
+//        Log.d(TAG, "onFailure: " + t.getCause());
+//        Log.d(TAG, "onFailure: " + t.getMessage());
+//    }
+//});
+//    ArrayList<Integer> arrayList1 = new ArrayList<>();
+
+symptomApi.getSymptoms("male",
+                "1998",
+                "en-gb", Arrays.toString(intList.toArray()),
+                "json",TOKEN).enqueue(new Callback<ArrayList<Main_Object>>() {
     @Override
     public void onResponse(Call<ArrayList<Main_Object>> call, Response<ArrayList<Main_Object>> response) {
-        Log.d(TAG, "onResponse: "+ response.isSuccessful());
-        Log.d(TAG, "onResponse: " + String.valueOf(response.body().size()));
-        Log.d(TAG, "onResponse: " + String.valueOf(response.body().get(1).getIssue().getIcdName().toString()));
-//        Log.d(TAG, "onResponse: " + response.body().get(0).getIssue().getName());
-        for(int i=0;i<response.body().size();i++){
+
+        if(response.isSuccessful()) {
+            Log.d(TAG, "onResponse: " + response.body().get(0).getIssue().getName());
+            for(int i=0;i<response.body().size();i++){
             arrayList.add(response.body().get(i));
         }
         Log.d(TAG, "onResponse: " + String.valueOf(arrayList.size()));
@@ -54,33 +85,15 @@ symptomApi.getSymp().enqueue(new Callback<ArrayList<Main_Object>>() {
 
         rv.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         rv.setAdapter(adapter);
-//        adapter.notifyDataSetChanged();
-
+        }else Log.d(TAG, "onResponse: " + response.isSuccessful());
 
     }
 
     @Override
     public void onFailure(Call<ArrayList<Main_Object>> call, Throwable t) {
-        Log.d(TAG, "onFailure: " + t.getCause());
-        Log.d(TAG, "onFailure: " + t.getMessage());
+        Log.d(TAG, "onFailure: ");
     }
 });
-//symptomApi.getSymptoms("male",
-//                "1998",
-//                "en-gb",new String []  {"13"},
-//                "json",TOKEN).enqueue(new Callback<ArrayList<Main_Object>>() {
-//    @Override
-//    public void onResponse(Call<ArrayList<Main_Object>> call, Response<ArrayList<Main_Object>> response) {
-//        Log.d(TAG, "onResponse: " + response.isSuccessful());
-//        Log.d(TAG, "onResponse: " + response.message());
-//        Log.d(TAG, "onResponse: " + response.errorBody());
-//    }
-//
-//    @Override
-//    public void onFailure(Call<ArrayList<Main_Object>> call, Throwable t) {
-//        Log.d(TAG, "onFailure: ");
-//    }
-//});
 
     }
 }
