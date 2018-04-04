@@ -20,10 +20,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Morse extends AppCompatActivity {
 
-String morse;
+    String morse;
     Retrofit retrofit;
     TextView tvResponse;
-public static final String TAG = "morse";
+    public static final String TAG = "morse";
     MorseApi morseApi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -16,16 +16,18 @@
         <activity android:name=".FirstActivity" />
         <activity android:name=".MedicinesActivity"></activity>
         <activity android:name=".MedicineInfoActivity" />
-        <activity android:name=".stt" />
-        <activity android:name=".tts">
-
-        </activity>
-        <activity android:name=".Morse">
+        <activity android:name=".stt" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".tts">
+
+        </activity>
+        <activity android:name=".Morse">
+
         </activity>
     </application>
 
