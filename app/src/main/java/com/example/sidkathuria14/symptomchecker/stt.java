@@ -127,7 +127,7 @@ public class stt extends Activity implements ISpeechRecognitionServerEvents
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_stt);
 
         this._logText = (EditText) findViewById(R.id.editText1);
         this._radioGroup = (RadioGroup)findViewById(R.id.groupMode);
