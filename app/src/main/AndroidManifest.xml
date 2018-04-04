@@ -14,12 +14,13 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".SymptomSelectorActivity" />
         <activity android:name=".FirstActivity" />
-        <activity android:name=".MedicinesActivity">
-
-        </activity>
+        <activity android:name=".MedicinesActivity"></activity>
         <activity android:name=".MedicineInfoActivity" />
         <activity android:name=".stt" />
         <activity android:name=".tts">
+
+        </activity>
+        <activity android:name=".Morse">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
