@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">symptom checker</string>
+
+    <string name="app_name">Speech</string>
+    <string name="tts_text">This is a demo of Microsoft Cognitive Services Text to Speech API.</string>
+    <string name="play_button_name">Play</string>
+    <string name="stop_button_name">Stop</string>
+    <string name="api_key">67164fdd790b42799c52df87c811750c</string>
+    <string name="add_subscription_key_tip_title">Subscription Key is Needed</string>
+    <string name="add_subscription_key_tip">Please put your subscription key to source file \"app/res/values/strings.xml\" to enable Face API calls.</string>
+
+    <string name="authenticationUri" />
+    <string name="luisAppID">yourLuisAppID</string>
+    <string name="luisSubscriptionID">yourLuisSubscriptionID</string>
+    <string name="action_settings">Settings</string>
 </resources>
