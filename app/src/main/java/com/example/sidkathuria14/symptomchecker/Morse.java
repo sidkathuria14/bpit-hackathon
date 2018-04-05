@@ -44,6 +44,7 @@ public class Morse extends AppCompatActivity {
         morseApi = retrofit.create(MorseApi.class);
 
 
+
         ((Button) findViewById(R.id.dit)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,6 +82,7 @@ public class Morse extends AppCompatActivity {
         }
 
     }
+
 
 
     @Override
