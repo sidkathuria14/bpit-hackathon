@@ -13,7 +13,7 @@
     tools:context="com.example.sidkathuria14.symptomchecker.SymptomSelectorActivity">
 <TextView
     android:textSize="20sp"
-    android:text="please select all the symptoms you are suffering from"
+    android:text="Please select all the symptoms you are suffering from"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
         <Button
