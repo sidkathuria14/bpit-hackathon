@@ -125,3 +125,12 @@ m_syn_female.SpeakToAudio(response.body().getContents().getTranslated());
         return super.onKeyDown(keyCode, event);
     }
 }
+
+//<LinearLayout
+//    android:padding="15sp"
+//            android:layout_marginTop="10sp"
+//            android:layout_margin="10sp"
+//            android:background="#ffffff"
+//            xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+//            android:orientation="vertical"
+//            android:layout_height="wrap_content">
