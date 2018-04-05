@@ -24,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Morse extends AppCompatActivity {
 
     public static final String TAG = "morse";
-    String morse;
+    String morse = "";
     Retrofit retrofit;
     TextView tvResponse;
     MorseApi morseApi;
