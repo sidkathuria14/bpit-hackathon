@@ -19,19 +19,19 @@ public class FirstActivity extends AppCompatActivity {
                 startActivity(new Intent(FirstActivity.this,MedicinesActivity.class));
             }
         });
-        ((Button)findViewById(R.id.disease)).setOnClickListener(new View.OnClickListener() {
+        ((Button)findViewById(R.id.symptoms)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(FirstActivity.this,MainActivity.class));
             }
         });
-        ((Button)findViewById(R.id.morse)).setOnClickListener(new View.OnClickListener() {
+        ((Button)findViewById(R.id.blind)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(FirstActivity.this,Morse.class));
             }
         });
-        ((Button)findViewById(R.id.tts)).setOnClickListener(new View.OnClickListener() {
+        ((Button)findViewById(R.id.mute)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(FirstActivity.this,tts.class));

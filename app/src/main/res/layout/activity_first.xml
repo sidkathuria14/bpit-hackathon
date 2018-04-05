@@ -18,29 +18,29 @@
             android:layout_weight="2">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/blind"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="136dp"
-                android:text="Button" />
+                android:text="Blind" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/deaf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
-                android:text="Button" />
+                android:text="Deaf" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/mute"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:text="Button" />
+                android:text="Mute" />
         </RelativeLayout>
 
         <LinearLayout
@@ -49,12 +49,14 @@
             android:layout_weight="1">
 
             <Button
+                android:id="@+id/symptoms"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Know Your Disease" />
 
             <Button
+                android:id="@+id/medicines"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -67,12 +69,14 @@
             android:layout_weight="1">
 
             <Button
+                android:id="@+id/beds"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Beds Availability" />
 
             <Button
+                android:id="@+id/blood"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
