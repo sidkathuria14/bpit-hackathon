@@ -13,24 +13,19 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
         <activity android:name=".SymptomSelectorActivity" />
-        <activity android:name=".FirstActivity" >
+        <activity android:name=".FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MedicinesActivity"></activity>
+        <activity android:name=".MedicinesActivity" />
         <activity android:name=".MedicineInfoActivity" />
-        <activity android:name=".stt" >
-
-        </activity>
-        <activity android:name=".tts">
-
-        </activity>
-        <activity android:name=".Morse">
-
-        </activity>
+        <activity android:name=".stt"></activity>
+        <activity android:name=".tts"></activity>
+        <activity android:name=".Morse"></activity>
+        <activity android:name=".MainActivity2"></activity>
     </application>
 
 </manifest>

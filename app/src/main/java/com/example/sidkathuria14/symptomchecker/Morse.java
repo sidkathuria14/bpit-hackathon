@@ -20,33 +20,34 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Morse extends AppCompatActivity {
 
+    public static final String TAG = "morse";
     String morse;
     Retrofit retrofit;
     TextView tvResponse;
-    public static final String TAG = "morse";
     MorseApi morseApi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_morse);
 
-        tvResponse = (TextView)findViewById(R.id.tvResponse);
+        tvResponse = (TextView) findViewById(R.id.tvResponse);
 
         retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl("http://api.funtranslations.com/")
                 .build();
 
-         morseApi = retrofit.create(MorseApi.class);
+        morseApi = retrofit.create(MorseApi.class);
 
 
-        ((Button)findViewById(R.id.dit)).setOnClickListener(new View.OnClickListener() {
+        ((Button) findViewById(R.id.dit)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                morse  += ".";
+                morse += ".";
             }
         });
-        ((Button)findViewById(R.id.dah)).setOnClickListener(new View.OnClickListener() {
+        ((Button) findViewById(R.id.dah)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 morse += "-";
@@ -54,31 +55,31 @@ public class Morse extends AppCompatActivity {
         });
 
 
-}
+    }
 
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        switch(keyCode){
-            case KeyEvent.KEYCODE_MENU:
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_VOLUME_UP:
                 Toast.makeText(this, "Menu key pressed", Toast.LENGTH_SHORT).show();
                 morseApi.getMorse(morse).enqueue(new Callback<Main_Morse_Model>() {
 
 
-                @Override
-                public void onResponse(Call<Main_Morse_Model> call, Response<Main_Morse_Model> response) {
-                    Log.d(TAG, "onResponse: " + response.body().getContents().getTranslated());
-tvResponse.setText(response.body().getContents().getTranslated());
-                    Log.d(TAG, "onResponse: " + response.body().getSuccess().getTotal());
-                    Log.d(TAG, "onResponse: " + response.body().getContents().getText());
+                    @Override
+                    public void onResponse(Call<Main_Morse_Model> call, Response<Main_Morse_Model> response) {
+                        Log.d(TAG, "onResponse: " + response.body().getContents().getTranslated());
+                        tvResponse.setText(response.body().getContents().getTranslated());
+                        Log.d(TAG, "onResponse: " + response.body().getSuccess().getTotal());
+                        Log.d(TAG, "onResponse: " + response.body().getContents().getText());
 
-                }
+                    }
 
-                @Override
-                public void onFailure(Call<Main_Morse_Model> call, Throwable t) {
-                    Log.d(TAG, "onFailure: ");
-                }
-            });
+                    @Override
+                    public void onFailure(Call<Main_Morse_Model> call, Throwable t) {
+                        Log.d(TAG, "onFailure: ");
+                    }
+                });
                 return true;
             case KeyEvent.KEYCODE_SEARCH:
 //                Toast.makeText(this, "Search key pressed", Toast.LENGTH_SHORT).show();
@@ -87,7 +88,7 @@ tvResponse.setText(response.body().getContents().getTranslated());
 //                onBackPressed();
                 morse += " ";
                 return true;
-            case KeyEvent.KEYCODE_VOLUME_UP:
+            case KeyEvent.KEYCODE_MENU:
 //                event.startTracking();
                 return true;
             case KeyEvent.KEYCODE_VOLUME_DOWN:
