@@ -1,6 +1,7 @@
 package com.example.sidkathuria14.symptomchecker;
 
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 
 import com.example.sidkathuria14.symptomchecker.api.MorseApi;
 import com.example.sidkathuria14.symptomchecker.models.Main_Morse_Model;
+import com.example.sidkathuria14.symptomchecker.speech.Synthesizer;
+import com.example.sidkathuria14.symptomchecker.speech.Voice;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,7 +28,7 @@ public class Morse extends AppCompatActivity {
     Retrofit retrofit;
     TextView tvResponse;
     MorseApi morseApi;
-
+    private Synthesizer m_syn_male, m_syn_female;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +58,28 @@ public class Morse extends AppCompatActivity {
         });
 
 
+        if (getString(R.string.api_key).startsWith("Please")) {
+            new AlertDialog.Builder(this)
+                    .setTitle(getString(R.string.add_subscription_key_tip_title))
+                    .setMessage(getString(R.string.add_subscription_key_tip))
+                    .setCancelable(false)
+                    .show();
+        } else {
+
+            if (m_syn_female == null) {
+                // Create Text To Speech Synthesizer.
+                m_syn_female = new com.example.sidkathuria14.symptomchecker.speech.Synthesizer(getString(R.string.api_key));
+            }
+            Voice v = new Voice("en-US", "Microsoft Server Speech Text to Speech Voice (en-US, ZiraRUS)", Voice.Gender.Female, true);
+//            //Voice v = new Voice("zh-CN", "Microsoft Server Speech Text to Speech Voice (zh-CN, HuihuiRUS)", Voice.Gender.Female, true);
+            m_syn_female.SetVoice(v, null);
+            m_syn_female.SetServiceStrategy(com.example.sidkathuria14.symptomchecker.speech.Synthesizer.ServiceStrategy.AlwaysService);
+
+            m_syn_female.SpeakToAudio("Greetings, user!");
+
+
+        }
+
     }
 
 
@@ -72,7 +97,7 @@ public class Morse extends AppCompatActivity {
                         tvResponse.setText(response.body().getContents().getTranslated());
                         Log.d(TAG, "onResponse: " + response.body().getSuccess().getTotal());
                         Log.d(TAG, "onResponse: " + response.body().getContents().getText());
-
+m_syn_female.SpeakToAudio(response.body().getContents().getTranslated());
                     }
 
                     @Override
