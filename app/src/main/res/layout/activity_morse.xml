@@ -26,7 +26,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#a52b00"
+            android:textSize="30sp"
+            android:background="#207b6c"
             android:text="dit" />
 
         <Button
@@ -34,7 +35,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#05086c"
+            android:textSize="30sp"
+            android:background="#d1c841"
             android:text="dah" />
     </LinearLayout>
 </LinearLayout>

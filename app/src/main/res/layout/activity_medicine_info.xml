@@ -18,12 +18,16 @@
 
     <TextView
         android:id="@+id/tvMRP"
+        android:layout_marginTop="20sp"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="sample mrp"
         android:textSize="25sp" />
 
     <TextView
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
         android:id="@+id/tvManufacturer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

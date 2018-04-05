@@ -15,7 +15,7 @@ public class MedicineInfoActivity extends AppCompatActivity {
 
 
         ((TextView)findViewById(R.id.tvName)).setText(getIntent().getStringExtra("name"));
-        ((TextView)findViewById(R.id.tvManufacturer)).setText(getIntent().getStringExtra("manu"));
+        ((TextView)findViewById(R.id.tvManufacturer)).setText("Rs. " + getIntent().getStringExtra("manu"));
         ((TextView)findViewById(R.id.tvMRP)).setText(getIntent().getStringExtra("mrp"));
 
 

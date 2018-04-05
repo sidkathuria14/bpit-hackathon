@@ -10,42 +10,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="4">
+        android:weightSum="3">
 
-        <RelativeLayout
+        <LinearLayout
+            android:weightSum="7"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:orientation="vertical"
             android:layout_weight="2">
-
+<FrameLayout
+    android:layout_weight="1"
+    android:layout_width="wrap_content"
+    android:layout_height="0dp"></FrameLayout>
             <Button
+                android:layout_weight="5"
                 android:id="@+id/blind"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="136dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="136dp"
-                android:text="Blind" />
+                android:text="Impaired Vision" />
 
-            <Button
-                android:id="@+id/deaf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:text="Deaf" />
 
-            <Button
-                android:id="@+id/mute"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:text="Mute" />
-        </RelativeLayout>
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,25 +54,7 @@
                 android:text="Medicines" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
 
-            <Button
-                android:id="@+id/beds"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Beds Availability" />
-
-            <Button
-                android:id="@+id/blood"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Blood Availability" />
-        </LinearLayout>
 
     </LinearLayout>
 

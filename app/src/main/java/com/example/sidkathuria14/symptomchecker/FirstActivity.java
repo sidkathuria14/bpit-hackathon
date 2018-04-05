@@ -1,5 +1,6 @@
 package com.example.sidkathuria14.symptomchecker;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +23,7 @@ public class FirstActivity extends AppCompatActivity {
         ((Button)findViewById(R.id.symptoms)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(FirstActivity.this,MainActivity.class));
+                startActivity(new Intent(FirstActivity.this,SymptomSelectorActivity.class));
             }
         });
         ((Button)findViewById(R.id.blind)).setOnClickListener(new View.OnClickListener() {
@@ -31,12 +32,7 @@ public class FirstActivity extends AppCompatActivity {
                 startActivity(new Intent(FirstActivity.this,Morse.class));
             }
         });
-        ((Button)findViewById(R.id.mute)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(FirstActivity.this,tts.class));
-            }
-        });
+
 
     }
 }

@@ -89,7 +89,7 @@ public class Morse extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
-                Toast.makeText(this, "Menu key pressed", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Menu key pressed", Toast.LENGTH_SHORT).show();
                 morseApi.getMorse(morse).enqueue(new Callback<Main_Morse_Model>() {
 
 
@@ -112,11 +112,12 @@ m_syn_female.SpeakToAudio(response.body().getContents().getTranslated());
 //                Toast.makeText(this, "Search key pressed", Toast.LENGTH_SHORT).show();
                 return true;
             case KeyEvent.KEYCODE_BACK:
-//                onBackPressed();
-                morse += " ";
+                onBackPressed();
+
                 return true;
             case KeyEvent.KEYCODE_MENU:
 //                event.startTracking();
+                morse += " ";
                 return true;
             case KeyEvent.KEYCODE_VOLUME_DOWN:
 //                Toast.makeText(this,"Volumen Down pressed", Toast.LENGTH_SHORT).show();
