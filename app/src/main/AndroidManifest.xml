@@ -14,11 +14,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".SymptomSelectorActivity" />
         <activity android:name=".FirstActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".MedicinesActivity" />
         <activity android:name=".MedicineInfoActivity" />
@@ -26,7 +22,14 @@
         <activity android:name=".tts" />
         <activity android:name=".Morse" />
         <activity android:name=".MainActivity2" />
-        <activity android:name=".BloodActivity"></activity>
+        <activity android:name=".BloodActivity" />
+        <activity android:name=".Main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
